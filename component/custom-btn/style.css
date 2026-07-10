@@ -1,0 +1,70 @@
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.btn-container {
+  --element-width: 150px;
+  /* Set the desired width for the button */
+  --element-height: 50px;
+  /* Set the desired height for the button */
+  --element-border-radius: 15px;
+  /* Set the desired border radius for the button */
+  --element-background-color: #3f0b63;
+  /* Set the desired background color for the button */
+  --element-text-color: #ffffff;
+  /* Set the desired text color for the button */
+
+  width: var(--element-width);
+  height: var(--element-height);
+  padding: 0px;
+  margin: 30px auto;
+  position: relative;
+}
+
+.bg {
+  width: var(--element-width);
+  height: var(--element-height);
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  background: linear-gradient(var(--angle),
+      rgb(61, 13, 107) 10%,
+      /* set the starting color of the gradient */
+      rgb(223, 48, 223) 90%
+      /* set the ending color of the gradient */
+    );
+  border-radius: var(--element-border-radius);
+  filter: blur(20px);
+  margin: 0 auto;
+  animation: rotateGradient 4s linear infinite;
+}
+
+@keyframes rotateGradient {
+  from {
+    --angle: 0deg;
+  }
+
+  to {
+    --angle: 360deg;
+  }
+}
+
+.custom-btn {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  width: var(--element-width);
+  height: var(--element-height);
+  border-radius: var(--element-border-radius);
+  background-color: var(--element-background-color);
+  color: var(--element-text-color);
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+}
