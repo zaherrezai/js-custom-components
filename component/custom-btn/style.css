@@ -5,15 +5,15 @@
 }
 
 .btn-container {
-  --element-width: 150px;
+  /* --element-width: 150px; */
   /* Set the desired width for the button */
-  --element-height: 50px;
+  /* --element-height: 35px; */
   /* Set the desired height for the button */
-  --element-border-radius: 15px;
+  /* --element-border-radius: 15px; */
   /* Set the desired border radius for the button */
-  --element-background-color: #3f0b63;
+  /* --element-background-color: #3f0b63; */
   /* Set the desired background color for the button */
-  --element-text-color: #ffffff;
+  /* --element-text-color: #ffffff; */
   /* Set the desired text color for the button */
 
   width: var(--element-width);
@@ -22,7 +22,37 @@
   margin: 30px auto;
   position: relative;
 }
+.btn-text{
+  color: white;
+  display: inline-block;
+}
 
+.custom-btn:active .btn-text {
+    animation: glowingText 1.5s ease-in-out infinite alternate;;
+}
+@keyframes glowingText {
+    0% {
+        text-shadow:
+            0 0 4px white,
+            0 0 10px #b0afb0,
+            0 0 20px #7c7b7c;
+    }
+
+    50% {
+        text-shadow:
+            0 0 8px white,
+            0 0 20px #b0afb0,
+            0 0 45px #7c7b7c,
+            0 0 65px #525252;
+    }
+
+    100% {
+        text-shadow:
+            0 0 6px white,
+            0 0 15px #b0afb0,
+            0 0 35px #7c7b7c;
+    }
+}
 .bg {
   width: var(--element-width);
   height: var(--element-height);

@@ -4,22 +4,23 @@
   inherits: false;
 }
 .input-container {
-  --element-width: 250px;
-  /* Set the desired width for the button */
-  --element-height: 50px;
-  /* Set the desired height for the button */
-  --element-border-radius: 15px;
-  /* Set the desired border radius for the button */
-  --element-background-color: #fafafa;
-  /* Set the desired background color for the button */
-  --element-text-color: #1d0329;
-  /* Set the desired text color for the button */
+  /* --element-width: 400px; */
+  /* Set the desired width for the label */
+  /* --element-height: 30px; */
+  /* Set the desired height for the label */
+  /* --element-border-radius: 5px; */
+  /* Set the desired border radius for the label */
+  /* --element-background-color: #fafafa; */
+  /* Set the desired background color for the label */
+  /* --element-text-color: #1d0329; */
+  /* Set the desired text color for the label */
 
   width: var(--element-width);
   height: var(--element-height);
   padding: 0px;
-  margin: 10px auto;
+  margin: 0px auto;
   position: relative;
+  box-sizing: border-box;
 }
 
 .bg {
@@ -29,6 +30,9 @@
   left: 0;
   right: 0;
   z-index: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+
   background: linear-gradient(var(--angle),
       rgb(61, 13, 107) 10%,
       /* set the starting color of the gradient */
@@ -40,7 +44,9 @@
   margin: 0 auto;
   animation: rotateGradient 4s linear infinite;
 }
-
+.input-container:focus-within .bg {
+    opacity: 1;
+}
 @keyframes rotateGradient {
   from {
     --angle: 0deg;
@@ -55,7 +61,7 @@
   left: 0;
   right: 0;
   z-index: 1;
-  padding: 5px;
+  padding: 10px;
   vertical-align: middle;
   width: var(--element-width);
   height: var(--element-height);
@@ -63,6 +69,10 @@
   background-color: var(--element-background-color);
   color: var(--element-text-color);
   border: var(--element-text-color) 1px solid;
-  font-size: 14px;
+  font-size: 11px;
   cursor: text;
+  box-sizing: border-box;
+}
+.input-text:focus {
+  outline: none;
 }
